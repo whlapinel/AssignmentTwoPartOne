@@ -7,24 +7,35 @@ public class Main {
         ArrayList<Movie> library = new ArrayList<>();
         System.out.println("Provide number of movies to enter in library: ");
         Scanner sc = new Scanner(System.in);
-        int runtimes = Integer.parseInt(sc.nextLine());
+        autoEnterMovie(library,sc);
+/*        int runtimes = Integer.parseInt(sc.nextLine());
         for (int x=0; x<runtimes; ++x) {
-            Movie newMovie = enterMovie(sc);
+            Movie newMovie = UserEnterMovie(sc);
             library.add(newMovie);
             for (Movie movie : library) {
                 movie.print();
             }
+        }*/
+        System.out.println("Movie library: ");
+        for (Movie movie : library) {
+            movie.print();
         }
         System.out.println("Top rated movie: ");
         System.out.println(getTopRated(library));
         System.out.println("Bottom rated movie: ");
         System.out.println(getBottomRated(library));
-
-
-
-
     }
-    public static Movie enterMovie(Scanner sc) {
+    public static void autoEnterMovie(ArrayList<Movie> library, Scanner sc) {
+        System.out.println("Enter number of movies to generate: ");
+        int numMovies = Integer.parseInt(sc.nextLine());
+        for (int i=0; i<numMovies; ++i) {
+            Movie newMovie = new Movie(
+                    "title" + i, 1980, "director" + i,
+                    90, "actors" + i, "genre" + i);
+            library.add(newMovie);
+        }
+    }
+/*    public static Movie UserEnterMovie(Scanner sc) {
         System.out.println("Please enter movie information as follows.");
         System.out.println("Enter title: ");
         String title = sc.nextLine();
@@ -39,7 +50,7 @@ public class Main {
         System.out.println("Enter year: ");
         int year = Integer.parseInt(sc.nextLine());
         return new Movie(title, year, director, duration, actors, genre);
-    }
+    }*/
 
     public static String getTopRated(ArrayList<Movie> library) {
         Movie topRatedMovie = library.get(0);
@@ -51,7 +62,6 @@ public class Main {
                 topRating = rating;
                 topRatedMovie = indexedMovie;
             }
-
         }
         return topRatedMovie.getTitle();
     }
