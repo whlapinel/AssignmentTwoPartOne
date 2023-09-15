@@ -18,16 +18,15 @@ public class Movie {
     }
 
     public void print() {
-        System.out.println("**********************************");
         System.out.println("information about: " + this.title);
-        System.out.println("**********************************");
-        System.out.println("title: " + this.title);
-        System.out.println("year: " + this.year);
-        System.out.println("director: " + this.director);
-        System.out.println("duration: " + this.duration);
-        System.out.println("actors: " + this.actors);
-        System.out.println("genre: " + this.genre);
-        System.out.println("rating: " + this.rating);
+        System.out.print("title: " + this.title + " | ");
+        System.out.print("year: " + this.year + " | ");
+        System.out.print("director: " + this.director + " | ");
+        System.out.print("duration: " + this.duration + " | ");
+        System.out.print("actors: " + this.actors + " | ");
+        System.out.print("genre: " + this.genre + " | ");
+        System.out.print("rating: " + this.rating + " | ");
+        System.out.println();
         System.out.println("**********************************");
     }
     public int getRating() {
