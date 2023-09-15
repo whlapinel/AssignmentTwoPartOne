@@ -15,6 +15,11 @@ public class Main {
                 movie.print();
             }
         }
+        System.out.println("Top rated movie: ");
+        System.out.println(getTopRated(library));
+
+
+
 
     }
     public static Movie enterMovie(Scanner sc) {
@@ -33,7 +38,21 @@ public class Main {
         int year = Integer.parseInt(sc.nextLine());
         return new Movie(title, year, director, duration, actors, genre);
     }
-    public static void getMaxRating() {
-        System.out.println("Top rated movie is: "); //FIXME
+
+    //FIXME this is not working properly. Seems to return last movie instead
+    public static String getTopRated(ArrayList<Movie> library) {
+        Movie topRatedMovie = library.get(0);
+        int topRating = 0;
+        for (int i = 1; i < library.size(); ++i) {
+            Movie indexedMovie = library.get(i);
+            int rating = indexedMovie.getRating();
+            if (rating > topRating) {
+                topRatedMovie = indexedMovie;
+            }
+
+
+        }
+        return topRatedMovie.getTitle();
     }
+
 }

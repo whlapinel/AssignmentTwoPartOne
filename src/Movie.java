@@ -30,4 +30,10 @@ public class Movie {
         System.out.println("rating: " + this.rating);
         System.out.println("**********************************");
     }
+    public int getRating() {
+        return rating;
+    }
+    public String getTitle() {
+        return title;
+    }
 }
