@@ -17,6 +17,8 @@ public class Main {
         }
         System.out.println("Top rated movie: ");
         System.out.println(getTopRated(library));
+        System.out.println("Bottom rated movie: ");
+        System.out.println(getBottomRated(library));
 
 
 
@@ -39,7 +41,6 @@ public class Main {
         return new Movie(title, year, director, duration, actors, genre);
     }
 
-    //FIXME this is not working properly. Seems to return last movie instead
     public static String getTopRated(ArrayList<Movie> library) {
         Movie topRatedMovie = library.get(0);
         int topRating = 0;
@@ -47,12 +48,24 @@ public class Main {
             Movie indexedMovie = library.get(i);
             int rating = indexedMovie.getRating();
             if (rating > topRating) {
+                topRating = rating;
                 topRatedMovie = indexedMovie;
             }
-
 
         }
         return topRatedMovie.getTitle();
     }
-
+    public static String getBottomRated(ArrayList<Movie> library) {
+        Movie bottomRatedMovie = library.get(0);
+        int bottomRating = 11;
+        for (int i = 1; i < library.size(); ++i) {
+            Movie indexedMovie = library.get(i);
+            int rating = indexedMovie.getRating();
+            if (rating < bottomRating) {
+                bottomRating = rating;
+                bottomRatedMovie = indexedMovie;
+            }
+        }
+        return bottomRatedMovie.getTitle();
+    }
 }
