@@ -21,7 +21,7 @@ public class Movie {
         System.out.print("title: " + this.title + " | ");
         System.out.print("year: " + this.year + " | ");
         System.out.print("director: " + this.director + " | ");
-        System.out.print("duration: " + this.duration + " | ");
+        System.out.print("duration: " + this.duration + " min | ");
         System.out.print("actors: " + this.actors + " | ");
         System.out.print("genre: " + this.genre + " | ");
         System.out.print("rating: " + this.rating + " | ");
