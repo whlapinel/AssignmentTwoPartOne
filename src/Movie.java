@@ -18,7 +18,6 @@ public class Movie {
     }
 
     public void print() {
-        System.out.println("information about: " + this.title);
         System.out.print("title: " + this.title + " | ");
         System.out.print("year: " + this.year + " | ");
         System.out.print("director: " + this.director + " | ");
@@ -27,7 +26,6 @@ public class Movie {
         System.out.print("genre: " + this.genre + " | ");
         System.out.print("rating: " + this.rating + " | ");
         System.out.println();
-        System.out.println("**********************************");
     }
     public int getRating() {
         return rating;
