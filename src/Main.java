@@ -37,7 +37,6 @@ public class Main {
         System.out.println(getBottomRated(library));
     }
     public static void autoEnterMovie(ArrayList<Movie> library, Scanner sc) {
-//        String[] actorArray = String[]{"Bruce Willis", "Bruce Lee", "Jane Fonda", "Jackie Chan", ""};
 
         System.out.println("Enter number of movies to generate: ");
         int numMovies = Integer.parseInt(sc.nextLine());

@@ -14,7 +14,7 @@ public class Movie {
         this.duration = duration;
         this.actors = actors;
         this.genre = genre;
-        this.rating = (int) (Math.random() * 10);
+        this.rating = (int) (Math.random() * 10) + 1;
     }
 
     public void print() {
