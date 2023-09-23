@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Movie {
     private String title;
     private int year;
@@ -7,14 +9,28 @@ public class Movie {
     private String genre;
     private int rating;
 
-    public Movie(String title, int year, String director, int duration, String actors, String genre) {
-        this.title = title;
-        this.year = year;
-        this.director = director;
-        this.duration = duration;
-        this.actors = actors;
-        this.genre = genre;
+    public Movie() {
+
+    }
+
+    public void generateRating() {
         this.rating = (int) (Math.random() * 10) + 1;
+    }
+    public void userEnterMovie() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Title: ");
+        this.title = sc.nextLine();
+        System.out.println("Year: ");
+        this.year = Integer.parseInt(sc.nextLine());
+        System.out.println("Director: ");
+        this.director = sc.nextLine();
+        System.out.println("Duration in minutes: ");
+        this.duration = Integer.parseInt(sc.nextLine());
+        System.out.println("Actors: ");
+        this.actors = sc.nextLine();
+        System.out.println("Genre: ");
+        this.genre = sc.nextLine();
+        this.generateRating();
     }
 
     public void print() {
@@ -30,7 +46,5 @@ public class Movie {
     public int getRating() {
         return rating;
     }
-    public String getTitle() {
-        return title;
-    }
+
 }
