@@ -21,17 +21,25 @@ public class Movie {
         System.out.println("Title: ");
         this.title = sc.nextLine();
         System.out.println("Year: ");
+        while (!sc.hasNextInt()) {
+            System.out.println("Please enter a valid year.");
+            sc.nextLine();
+        }
         this.year = Integer.parseInt(sc.nextLine());
         System.out.println("Director: ");
         this.director = sc.nextLine();
         System.out.println("Duration in minutes: ");
+        while (!sc.hasNextInt()) {
+            System.out.println("Please enter a valid duration in minutes (whole numbers only).");
+            sc.nextLine();
+        }
         this.duration = Integer.parseInt(sc.nextLine());
         System.out.println("Actors: ");
         this.actors = sc.nextLine();
         System.out.println("Genre: ");
         this.genre = sc.nextLine();
         this.assignRating();
-        System.out.println("Assigned rating: " + this.rating);
+        System.out.println("Assigned rating for " + this.title + ": " + this.rating);
     }
 
     public void print() {
