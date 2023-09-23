@@ -13,7 +13,7 @@ public class Movie {
 
     }
 
-    public void generateRating() {
+    public void assignRating() {
         this.rating = (int) (Math.random() * 10) + 1;
     }
     public void userEnterMovie() {
@@ -30,7 +30,8 @@ public class Movie {
         this.actors = sc.nextLine();
         System.out.println("Genre: ");
         this.genre = sc.nextLine();
-        this.generateRating();
+        this.assignRating();
+        System.out.println("Assigned rating: " + this.rating);
     }
 
     public void print() {
